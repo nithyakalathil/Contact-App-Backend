@@ -7,7 +7,7 @@ const app=express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb+srv://nithya:nithya913@cluster0.r7eo1il.mongodb.net/coursesdb?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://nithya:nithya913@cluster0.r7eo1il.mongodb.net/condactDB?retryWrites=true&w=majority&appName=Cluster0")
 
 
 app.post("/add",(req,res)=>{
