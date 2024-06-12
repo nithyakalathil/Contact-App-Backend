@@ -7,7 +7,7 @@ const app=express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb+srv://nithya:nithya913@cluster0.r7eo1il.mongodb.net/coursesdb?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://nithya:nithya913@cluster0.r7eo1il.mongodb.net/condactDB?retryWrites=true&w=majority&appName=Cluster0")
 
 
 app.post("/add",(req,res)=>{
@@ -18,6 +18,11 @@ app.post("/add",(req,res)=>{
     res.json({status:"Success"})
 })
 
+app.get("/view",(req,res)=>{
+    contactmodel.find().then((data)=>{
+        res.json(data)
+    })
+})
 
 app.listen(8080,()=>{
     console.log("server started")
