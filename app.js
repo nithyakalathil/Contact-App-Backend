@@ -18,6 +18,11 @@ app.post("/add",(req,res)=>{
     res.json({status:"Success"})
 })
 
+app.get("/view",(req,res)=>{
+    contactmodel.find().then((data)=>{
+        res.json(data)
+    })
+})
 
 app.listen(8080,()=>{
     console.log("server started")
