@@ -32,6 +32,14 @@ app.post("/search",(req,res)=>{
     })
 })
 
+app.post("/delete",(req,res)=>{
+    let input=req.body
+    contactmodel.findByIdAndDelete(input._id).then(
+        (response)=>{res.json({status:"Success"})}
+    )
+})
+
+
 app.listen(8080,()=>{
     console.log("server started")
 })
